@@ -1,0 +1,24 @@
+<p>
+  <mat-toolbar>
+    <mat-toolbar-row fxLayoutAlign="space-between center">
+      <div>
+        <button  [routerLink]="['/main']" mat-button>
+          <mat-icon>home</mat-icon>
+          <span>HOME</span>
+        </button> 
+        <button  [routerLink]="['/profile']" mat-button>
+          Profile
+        </button>
+        <button  [routerLink]="['/documents']"  mat-button>
+          Documents
+        </button>
+      </div>
+      <div>
+        <button class="logout" (click)="logout()" mat-button>
+          <mat-icon>logout</mat-icon> 
+          <span>Logout</span>
+        </button>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</p>

@@ -1,0 +1,46 @@
+<div fxLayoutAlign="center center" fxFlexFill>
+  <mat-card fxFlex="25">
+    <mat-toolbar color="warn">
+      Register 
+    </mat-toolbar>
+    <form class="form" #register="ngForm" (ngSubmit)="onRegister(register.value)" fxLayoutAlign="stretch" fxLayout="column">
+      
+      <mat-form-field appearance="fill">
+        <mat-label>Username</mat-label>
+        <input name="username" id="username" matInput ngModel>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input name="password" id="password" type="password" matInput ngModel>
+      </mat-form-field> 
+      <mat-form-field appearance="fill">
+        <mat-label>Firstname</mat-label>
+        <input name="first_name" id="first_name" matInput ngModel>
+      </mat-form-field> 
+      <mat-form-field appearance="fill">
+        <mat-label>Lastname</mat-label>
+        <input name="last_name" id="last_name" type="text" matInput ngModel>
+      </mat-form-field> 
+      <mat-form-field appearance="fill">
+        <mat-label>Age</mat-label>
+        <input name="age" id="age" type="decimal" matInput ngModel>
+      </mat-form-field> 
+      <mat-form-field appearance="fill">
+        <mat-label>Gender</mat-label>
+        <select matNativeControl required>
+          <option value="" selected disabled>Select</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </mat-form-field> 
+      <mat-form-field appearance="fill">
+        <mat-label>Birth Date</mat-label>
+        <input name="birth_date" id="birth_date" type="date" matInput ngModel>
+      </mat-form-field> 
+     
+      <button type="submit" mat-raised-button color="primary">Register</button>
+      <mat-divider>or</mat-divider>
+      <a mat-raised-button  [routerLink]="['/']" target="">Back to Login</a>
+    </form>
+  </mat-card>
+</div>

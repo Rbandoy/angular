@@ -1,0 +1,19 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.navmenu {
+  margin: 5px;
+  cursor: pointer;
+}
+
+.navmenu:hover{
+  color: blue;
+  background-color: blue;
+}
+
+.hero{
+  background-image: url('/assets/bg.jpg') !important;
+  background-size: cover;
+  background-position: center center;
+}
