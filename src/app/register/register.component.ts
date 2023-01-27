@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
 
@@ -15,10 +15,13 @@ interface registerResponse {
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
+  @ViewChild('gender') gender!: ElementRef; 
+  genderSelect: ""
 
   constructor(private http:HttpClient, private dialog:MatDialog){}
 
   onRegister(registerData: {username: string, password: string, first_name: string, last_name: string, age: number, gender: string, birth_date: string}) {
+    registerData.gender=this.genderSelect;
     this.http.post("http://localhost:8000/user/register", registerData).subscribe((res) => {
       const response: registerResponse = res
       this.dialog.open(DialogComponent, {
@@ -33,4 +36,8 @@ export class RegisterComponent {
       });
     }) 
   }
+  onSelected():void {
+		this.genderSelect = this.gender.nativeElement.value;
+    console.log(this.genderSelect)
+	}
 }
